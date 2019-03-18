@@ -2,7 +2,7 @@ package WaitTime;
 
 public class Customer {
     private String name;
-    private int transations;
+    private int transactions;
 
     /**
      * Creates a customer with the given name and
@@ -12,7 +12,7 @@ public class Customer {
      */
     public Customer(String name, int transactions){
         this.name = name;
-        this.transations = transactions;
+        this.transactions = transactions;
     }
 
     /**
@@ -20,7 +20,7 @@ public class Customer {
      * @return the number of transactions remaining
      */
     public int getTransactions(){
-        return transations;
+        return transactions;
     }
 
     /**
@@ -38,10 +38,10 @@ public class Customer {
      * false if there are no more transactions.
      */
     public boolean completeOneTransaction(){
-        if(transations > 0){
+        if(transactions == 0){
             return false;
         }
-        transations--;
+        transactions--;
         return true;
     }
 
@@ -49,7 +49,7 @@ public class Customer {
      * Returns the name and number of transactions remaining
      */
     public String toString(){
-        return (getName() + " completed " + transations + " transactions.");
+        return (getName() + " has " + getTransactions() + " transaction(s).");
     }
 
 }
